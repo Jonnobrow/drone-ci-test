@@ -8,10 +8,10 @@ steps:
   image: python:3.10-alpine
   commands:
     - pip install -r requirements.txt 
-    - pytest
+    - python -m pytest
 - name: bandit
   image: python:3.10-alpine
   commands:
      - pip install -r requirements.txt
      - pip install bandit
-     - bandit -r calc
+     - python -m bandit -r calc

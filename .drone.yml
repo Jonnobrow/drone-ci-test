@@ -20,7 +20,7 @@ steps:
   image: plugins/docker
   settings:
     username: ${DOCKER_LOGIN}
-    password: ${DOCKER_USERNAME}
+    password: ${DOCKER_PASSWORD}
     repo: ${DOCKER_LOGIN}/drone-ci-cd-calc-app
     tags:
       - latest

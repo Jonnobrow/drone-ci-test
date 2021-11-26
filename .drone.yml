@@ -4,10 +4,15 @@ type: docker
 name: default
 
 steps:
+- name: pre-commit
+  image: python:3.10-alpine
+  commands:
+    - pip install pre-commit
+    - pre-commit run --all-files
 - name: test
   image: python:3.10-alpine
   commands:
-    - pip install -r requirements.txt 
+    - pip install -r requirements.txt
     - python -m pytest
 - name: bandit
   image: python:3.10-alpine

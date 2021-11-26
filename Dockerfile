@@ -21,5 +21,3 @@ ENV DEBUG=False
 
 # Run the app
 ENTRYPOINT [ "python", "calc/app.py" ]
-
-

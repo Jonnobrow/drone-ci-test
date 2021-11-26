@@ -19,9 +19,11 @@ steps:
 - name: build
   image: plugins/docker
   settings:
-    username: ${DOCKER_LOGIN}
-    password: ${DOCKER_PASSWORD}
-    repo: ${DOCKER_LOGIN}/drone-ci-cd-calc-app
+    username:
+      from_secret: DOCKER_LOGIN
+    password:
+      from_secret: DOCKER_PASSWORD
+    repo: jonnobrow/drone-ci-cd-calc-app
     tags:
       - latest
       - ${DRONE_COMMIT_SHA:0:8}

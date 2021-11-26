@@ -1,11 +1,11 @@
 FROM python:3.10-alpine
 
 # Create a user
-RUN useradd -ms /bin/ash calcapp
+RUN adduser -S -h /calcapp -s /bin/ash calcapp
 USER calcapp
 
 # Change working directory
-WORKDIR /home/calcapp
+WORKDIR /calcapp
 
 # Copy install the requirements
 COPY ./requirements.txt ./requirements.txt

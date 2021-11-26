@@ -5,10 +5,7 @@ name: default
 
 steps:
 - name: pre-commit
-  image: python:3.10-alpine
-  commands:
-    - pip install pre-commit
-    - pre-commit run --all-files
+  image: iamthefij/drone-pre-commit:latest
 - name: test
   image: python:3.10-alpine
   commands:

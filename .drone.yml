@@ -12,6 +12,15 @@ steps:
 - name: bandit
   image: python:3.10-alpine
   commands:
-     - pip install -r requirements.txt
      - pip install bandit
      - python -m bandit -r calc
+- name: build
+  image: plugins/docker
+  settings:
+    username: ${DOCKER_LOGIN}
+    password: ${DOCKER_USERNAME}
+    repo: ${DOCKER_LOGIN}/drone-ci-cd-calc-app
+    tags:
+      - latest
+      - ${DRONE_COMMIT_SHA:0:8}
+      - ${DRONE_TAG}
